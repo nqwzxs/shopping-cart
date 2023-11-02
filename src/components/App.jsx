@@ -28,6 +28,28 @@ const App = () => {
     setCartItems([...cartItems, { productId: id, quantity: 1 }])
   }
 
+  const removeItemFromCart = (id) => {
+    const newCartItems = []
+    cartItems.forEach((cartItem) => {
+      if (cartItem.productId === id) {
+        if (cartItem.quantity === 1) {
+          return
+        }
+
+        newCartItems.push({
+          ...cartItem,
+          quantity: cartItem.quantity - 1,
+        })
+        return
+      }
+      newCartItems.push(cartItem)
+      return
+    })
+
+    setCartItems(newCartItems)
+  }
+
+
   useEffect(() => {
     setDarkMode(localStorage.getItem('darkMode'))
 

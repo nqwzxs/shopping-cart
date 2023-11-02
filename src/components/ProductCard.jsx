@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 const ProductCard = ({ product, addItem, removeItem, quantity }) => {
   return (
     <div className="bg-white flex flex-col rounded-3xl shadow-md dark:bg-slate-800">
@@ -83,6 +85,13 @@ const ProductCard = ({ product, addItem, removeItem, quantity }) => {
       </div>
     </div>
   )
+}
+
+ProductCard.propTypes = {
+  product: PropTypes.object,
+  addItem: PropTypes.func,
+  removeItem: PropTypes.func,
+  quantity: PropTypes.number,
 }
 
 export default ProductCard

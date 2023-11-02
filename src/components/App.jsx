@@ -1,4 +1,6 @@
-import '../styles/App.css'
+import { useEffect, useState } from 'react'
+import NavigationBar from './NavigationBar'
+import { Outlet } from 'react-router-dom'
 
 const App = () => {
   const [products, setProducts] = useState(null)
@@ -49,6 +51,18 @@ const App = () => {
     setCartItems(newCartItems)
   }
 
+  const getQuantity = (id) => {
+    const selectedCartItem = selectCartItem(id)
+    return selectedCartItem ? selectedCartItem.quantity : 0
+  }
+
+  const selectCartItem = (id) => {
+    return cartItems.find((cartItem) => cartItem.productId === id)
+  }
+
+  const clearCart = () => {
+    setCartItems([])
+  }
 
   useEffect(() => {
     setDarkMode(localStorage.getItem('darkMode'))

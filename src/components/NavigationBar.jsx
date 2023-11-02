@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 
 const NavigationBar = ({ itemsCount, switchDarkMode }) => {
   return (
-    <div className="p-8 w-full sticky top-0 bg-white shadow-md dark:bg-slate-800 dark:text-white">
-      <div className="flex max-w-screen-xl mx-auto justify-start sm:justify-between gap-4">
+    <div className="p-8 py-4 w-full sticky top-0 bg-white shadow-md dark:bg-slate-800 dark:text-white">
+      <div className="flex max-w-screen-xl mx-auto justify-center sm:justify-between gap-4">
         <ul className="flex gap-4 items-center">
           <li>
             <NavLink

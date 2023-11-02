@@ -7,6 +7,27 @@ const App = () => {
   const [cartItems, setCartItems] = useState([])
   const [darkMode, setDarkMode] = useState(false)
 
+  const addItemToCart = (id) => {
+    const selectedCartItem = selectCartItem(id)
+
+    if (selectedCartItem) {
+      const newCartItems = cartItems.map((cartItem) => {
+        if (cartItem.productId === id) {
+          return {
+            ...cartItem,
+            quantity: cartItem.quantity + 1,
+          }
+        }
+        return cartItem
+      })
+
+      setCartItems(newCartItems)
+      return
+    }
+
+    setCartItems([...cartItems, { productId: id, quantity: 1 }])
+  }
+
   useEffect(() => {
     setDarkMode(localStorage.getItem('darkMode'))
 

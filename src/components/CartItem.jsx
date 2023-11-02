@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 const CartItem = ({ product, addItem, removeItem, quantity }) => {
   return (
     <div className="bg-white dark:bg-slate-800 flex rounded-3xl shadow-md gap-8 p-8 items-center flex-wrap">
@@ -52,6 +54,13 @@ const CartItem = ({ product, addItem, removeItem, quantity }) => {
       </div>
     </div>
   )
+}
+
+CartItem.propTypes = {
+  product: PropTypes.object,
+  addItem: PropTypes.func,
+  removeItem: PropTypes.func,
+  quantity: PropTypes.number,
 }
 
 export default CartItem

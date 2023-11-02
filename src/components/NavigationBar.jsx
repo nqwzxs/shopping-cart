@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import PropTypes from 'prop-types'
 
 const NavigationBar = ({ itemsCount, switchDarkMode }) => {
   return (
@@ -109,6 +110,11 @@ const NavigationBar = ({ itemsCount, switchDarkMode }) => {
       </div>
     </div>
   )
+}
+
+NavigationBar.propTypes = {
+  itemsCount: PropTypes.number,
+  switchDarkMode: PropTypes.func,
 }
 
 export default NavigationBar

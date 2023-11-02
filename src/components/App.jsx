@@ -64,6 +64,11 @@ const App = () => {
     setCartItems([])
   }
 
+  const switchDarkMode = () => {
+    darkMode ? setDarkMode(false) : setDarkMode(true)
+    localStorage.setItem('darkMode', !darkMode)
+  }
+
   useEffect(() => {
     setDarkMode(localStorage.getItem('darkMode'))
 
